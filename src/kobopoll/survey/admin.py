@@ -8,5 +8,4 @@ admin.site.register (Survey)
 
 admin.site.register (Choice)
 
-
 admin.site.register (Response)
