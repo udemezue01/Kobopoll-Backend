@@ -49,8 +49,7 @@ INSTALLED_APPS = [
     'userprofile',
     'survey',
 
-    'graphene_django',
-    'graphql_auth',
+'graphene_django',
 
 ]
 
@@ -130,8 +129,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -143,7 +140,7 @@ AUTH_USER_MODEL = 'account.CustomUser'
 # --- STATIC FILES CONFIGURATION ---
 STATIC_URL = 'static/'
 # Tells Django where to look for your asset folders during development
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] 
 
 # --- MEDIA FILES CONFIGURATION ---
 MEDIA_URL = '/media/'
@@ -157,9 +154,6 @@ GRAPHENE = {
     ],
 }
 
-GRAPHQL_AUTH = {
-    'DEFAULT_AUTO_FIELD': 'django.db.models.BigAutoField',
-}
 
 AUTHENTICATION_BACKENDS = [
     "graphql_jwt.backends.JSONWebTokenBackend",
