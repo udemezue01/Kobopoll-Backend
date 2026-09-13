@@ -34,7 +34,7 @@ class Mutation(graphene.ObjectType):
 
     # The Token Auth Mutation
 
-    # token_auth = ObtainJSONWebToken.Field()
+    token_auth = graphql_jwt.ObtainJSONWebToken.Field()
     verify_token = graphql_jwt.Verify.Field()
     refresh_token = graphql_jwt.Refresh.Field()
 

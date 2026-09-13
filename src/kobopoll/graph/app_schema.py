@@ -175,7 +175,7 @@ class Query(graphene.ObjectType):
 
         else:
 
-            return Tour.objects.all()
+            return Survey.objects.all()
 
 
     def resolve_survey(self, info, **kwargs):
@@ -188,7 +188,7 @@ class Query(graphene.ObjectType):
             raise GraphQLError("you must be authenticated to view this guide")
 
         else:
-            return Tour.objects.get(pk = id)
+            return Survey.objects.get(pk = id)
 
 
     # The Question List and Detail Resolve Method
@@ -203,7 +203,7 @@ class Query(graphene.ObjectType):
             raise GraphQLError("You must be authenticated to view this posts")
 
         else:
-            return Post.objects.filter(user= user)
+            return Question.objects.filter(user= user)
 
     def resolve_question(self, info, **kwargs):
 
@@ -213,7 +213,7 @@ class Query(graphene.ObjectType):
             raise GraphQLError("You must be authenticated to view this post")
 
         else:
-            return Post.objects.get(pk = id)
+            return Question.objects.get(pk = id)
 
     # The response List and Detail Resolve Method
 
